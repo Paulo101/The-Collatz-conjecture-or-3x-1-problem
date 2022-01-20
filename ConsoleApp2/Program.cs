@@ -16,9 +16,9 @@ namespace ConsoleApp2 // Note: actual namespace depends on the project name.
             if(string.IsNullOrEmpty(s))
                 Main(args);
             int r = int.Parse(s);
-            List<int> list = Collatz.Collazt(r);
+            Collatz.Collazt(r);
 
-            Print(list);
+            //Print(list);
         }
         static void Print(List<int> _list)
         {

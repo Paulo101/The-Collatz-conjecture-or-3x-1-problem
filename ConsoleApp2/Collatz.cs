@@ -8,36 +8,24 @@ namespace ConsoleApp2
 {
     public class Collatz
     {
-        public static List<int> Collazt(int n)
+        public static void Collazt(int n)
         {
-            List<int> data = new List<int>();
-            data.Add(n);
+            if (n % 2 != 0)
+                Console.WriteLine(n);
 
-            int resul = 0;
-
-            while (true)
+            if ((n % 2) == 0)
             {
-
-                if (n == 1)
-                {
-                    break;
-                }
-                if ((n % 2) == 0)
-                {
-                    resul = n / 2;
-                    n = resul;
-
-                }
-                else
-                {
-                    resul = (n * 3) + 1;
-                    n = resul;
-                }
-                if (n % 2 != 0)
-                    data.Add(n);
+                n = n / 2;
+            }
+            else
+            {
+                n = (n * 3) + 1;
             }
 
-            return data;
+            if (n != 1)
+                Collazt(n);
+            else
+                Console.WriteLine(n);
         }
     }
 }
